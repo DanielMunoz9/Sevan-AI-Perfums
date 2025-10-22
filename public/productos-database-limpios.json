@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "title": "Inspirado en Blue Seduction For Men (Antonio Banderas)",
+    "name": "Inspirado en Blue Seduction For Men (Antonio Banderas)",
+    "visible_title": "Inspirado en Blue Seduction For Men (Antonio Banderas)",
+    "description": "Fragancia inspirada artesanal premium. Concentración 18%, maceración 72h. No somos afiliados a la marca original.",
+    "short_description": "Fragancia inspirada artesanal premium. Concentraci...",
+    "price": 82557,
+    "sale_price": 70173,
+    "image_url": "/images/products/blue-seduction-for-men-antonio-banderas.jpg",
+    "images": [
+      "/images/products/blue-seduction-for-men-antonio-banderas.jpg"
+    ],
+    "brand": "SEVÁN PERFUM",
+    "category": "Masculino",
+    "created_at": "2025-10-04T16:12:47.602Z",
+    "scent_family": "Oriental",
+    "scent_notes": {
+      "top": [
+        "Notas Cítricas"
+      ],
+      "middle": [
+        "Corazón Floral"
+      ],
+      "base": [
+        "Base Amaderada"
+      ]
+    },
+    "inspiration": "Blue Seduction For Men",
+    "inspiration_brand": "Antonio Banderas",
+    "inspiration_fragrance": "Blue Seduction For Men",
+    "genre": "Masculino",
+    "concentration": "18%",
+    "stock": 100,
+    "slug": "inspirado-en-blue-seduction-for-men-antonio-banderas-",
+    "is_featured": false,
+    "is_active": true,
+    "avg_rating": 4.8,
+    "review_count": 75,
+    "sales": 142
+  },
+  {
+    "id": 2,
+    "title": "Inspirado en Caja (Jean Pascal)",
+    "name": "Inspirado en Caja (Jean Pascal)",
+    "visible_title": "Inspirado en Caja (Jean Pascal)",
+    "description": "Fragancia inspirada artesanal premium. Concentración 18%, maceración 72h. No somos afiliados a la marca original.",
+    "short_description": "Fragancia inspirada artesanal premium. Concentraci...",
+    "price": 78339,
+    "sale_price": null,
+    "image_url": "/images/placeholder-product.svg",
+    "images": [],
+    "brand": "SEVÁN PERFUM",
+    "category": "Masculino",
+    "created_at": "2025-10-04T16:12:47.603Z",
+    "scent_family": "Oriental",
+    "scent_notes": {
+      "top": [
+        "Notas Cítricas"
+      ],
+      "middle": [
+        "Corazón Floral"
+      ],
+      "base": [
+        "Base Amaderada"
+      ]
+    },
+    "inspiration": "Caja",
+    "inspiration_brand": "Jean Pascal",
+    "inspiration_fragrance": "Caja",
+    "genre": "Masculino",
+    "concentration": "18%",
+    "stock": 100,
+    "slug": "inspirado-en-caja-jean-pascal-",
+    "is_featured": false,
+    "is_active": true,
+    "avg_rating": 4.8,
+    "review_count": 20,
+    "sales": 233
+  },
+  {
+    "id": 3,
+    "title": "Inspirado en Cuero (Jean Pascal)",
+    "name": "Inspirado en Cuero (Jean Pascal)",
+    "visible_title": "Inspirado en Cuero (Jean Pascal)",
+    "description": "Fragancia inspirada artesanal premium. Concentración 18%, maceración 72h. No somos afiliados a la marca original.",
+    "short_description": "Fragancia inspirada artesanal premium. Concentraci...",
+    "price": 83492,
+    "sale_price": 70968,
+    "image_url": "/images/products/cuero-jean-pascal.jpg",
+    "images": [
+      "/images/products/cuero-jean-pascal.jpg"
+    ],
+    "brand": "SEVÁN PERFUM",
+    "category": "Masculino",
+    "created_at": "2025-10-04T16:12:47.603Z",
+    "scent_family": "Oriental",
+    "scent_notes": {
+      "top": [
+        "Notas Cítricas"
+      ],
+      "middle": [
+        "Corazón Floral"
+      ],
+      "base": [
+        "Base Amaderada"
+      ]
+    },
+    "inspiration": "Cuero",
+    "inspiration_brand": "Jean Pascal",
+    "inspiration_fragrance": "Cuero",
+    "genre": "Masculino",
+    "concentration": "18%",
+    "stock": 100,
+    "slug": "inspirado-en-cuero-jean-pascal-",
+    "is_featured": true,
+    "is_active": true,
+    "avg_rating": 4.8,
+    "review_count": 104,
+    "sales": 113
+  },
+  {
+    "id": 4,
+    "title": "Inspirado en BOSS Bottled (Hugo Boss)",
+    "name": "Inspirado en BOSS Bottled (Hugo Boss)",
+    "visible_title": "Inspirado en BOSS Bottled (Hugo Boss)",
+    "description": "Fragancia inspirada artesanal premium. Concentración 18%, maceración 72h. No somos afiliados a la marca original.",
+    "short_description": "Fragancia inspirada artesanal premium. Concentraci...",
+    "price": 88528,
+    "sale_price": null,
+    "image_url": "/images/products/boss-bottled-hugo-boss.jpg",
+    "images": [
+      "/images/products/boss-bottled-hugo-boss.jpg"
+    ],
+    "brand": "SEVÁN PERFUM",
+    "category": "Masculino",
+    "created_at": "2025-10-04T16:12:47.603Z",
+    "scent_family": "Oriental",
+    "scent_notes": {
+      "top": [
+        "Notas Cítricas"
+      ],
+      "middle": [
+        "Corazón Floral"
+      ],
+      "base": [
+        "Base Amaderada"
+      ]
+    },
+    "inspiration": "BOSS Bottled",
+    "inspiration_brand": "Hugo Boss",
+    "inspiration_fragrance": "BOSS Bottled",
+    "genre": "Masculino",
+    "concentration": "18%",
+    "stock": 100,
+    "slug": "inspirado-en-boss-bottled-hugo-boss-",
+    "is_featured": false,
+    "is_active": true,
+    "avg_rating": 4.8,
+    "review_count": 57,
+    "sales": 103
+  }
+]

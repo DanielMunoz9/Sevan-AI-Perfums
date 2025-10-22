@@ -1,0 +1,157 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "sku": "INSP-001",
+    "title": "Inspirado en Blue Seduction For Men (Antonio Banderas)",
+    "visible_title": "Inspirado en Blue Seduction For Men (Antonio Banderas)",
+    "slug": "inspirado-en-blue-seduction-for-men-antonio-banderas",
+    "short_description": "Fragancia fresca y seductora con notas acuáticas y amaderadas. Ideal para el hombre moderno que busca elegancia y frescura en una sola fragancia.",
+    "long_description": "Una reinterpretación artesanal de la icónica fragancia masculina. Combina la frescura de las notas acuáticas con la elegancia de maderas nobles, creando una experiencia olfativa irresistible. Perfecta para uso diario y ocasiones especiales.",
+    "price": 75000,
+    "sale_price": null,
+    "currency": "COP",
+    "category": "hombre",
+    "stock": 100,
+    "weight": 0.15,
+    "images": [
+      "inspirado-blue-seduction-antonio-banderas-hero.jpg",
+      "inspirado-blue-seduction-antonio-banderas-render.jpg",
+      "inspirado-blue-seduction-antonio-banderas-lifestyle.jpg"
+    ],
+    "scent_notes": {
+      "top": ["Bergamota", "Limón", "Menta", "Notas Acuáticas"],
+      "heart": ["Cardamomo", "Nuez Moscada", "Jengibre"],
+      "base": ["Madera de Cedro", "Ámbar", "Almizcle"]
+    },
+    "tags": ["fresco", "acuatico", "seductor", "masculino", "dia", "noche"],
+    "meta_title": "Inspirado en Blue Seduction For Men - Fragancia Fresca | SEVÁN PERFUM",
+    "meta_description": "Fragancia inspirada en Blue Seduction For Men de Antonio Banderas. Notas frescas y seductoras con 8h de duración. Formulación artesanal premium.",
+    "legal_note": "Nota: Fragancia inspirada en Antonio Banderas. No somos afiliados ni revendedores oficiales de la marca original.",
+    "is_featured": true,
+    "is_active": true
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "sku": "INSP-002",
+    "title": "Inspirado en Caja (Jean Pascal)",
+    "visible_title": "Inspirado en Caja (Jean Pascal)",
+    "slug": "inspirado-en-caja-jean-pascal",
+    "short_description": "Fragancia sofisticada con carácter único. Una interpretación moderna de elegancia masculina con notas especiadas y amaderadas.",
+    "long_description": "Nuestra reinterpretación de esta exclusiva fragancia combina especias refinadas con maderas nobles. Una fragancia de carácter para el hombre que busca diferenciarse con una firma olfativa única y memorable.",
+    "price": 119900,
+    "sale_price": 95900,
+    "currency": "COP",
+    "category": "hombre",
+    "stock": 100,
+    "weight": 0.15,
+    "images": [
+      "inspirado-caja-jean-pascal-hero.jpg",
+      "inspirado-caja-jean-pascal-render.jpg",
+      "inspirado-caja-jean-pascal-lifestyle.jpg"
+    ],
+    "scent_notes": {
+      "top": ["Pimienta Rosa", "Bergamota", "Cardamomo"],
+      "heart": ["Canela", "Rosa", "Lavanda"],
+      "base": ["Sándalo", "Vetiver", "Pachulí", "Ámbar"]
+    },
+    "tags": ["especiado", "amaderado", "sofisticado", "masculino", "noche", "elegante"],
+    "meta_title": "Inspirado en Caja Jean Pascal - Fragancia Sofisticada | SEVÁN PERFUM",
+    "meta_description": "Fragancia inspirada en Caja de Jean Pascal. Notas especiadas y amaderadas para el hombre sofisticado. Formulación artesanal de 18% concentración.",
+    "legal_note": "Nota: Fragancia inspirada en Jean Pascal. No somos afiliados ni revendedores oficiales de la marca original.",
+    "is_featured": true,
+    "is_active": true
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "sku": "INSP-003",
+    "title": "Inspirado en Cuero (Jean Pascal)",
+    "visible_title": "Inspirado en Cuero (Jean Pascal)",
+    "slug": "inspirado-en-cuero-jean-pascal",
+    "short_description": "Fragancia intensa con notas de cuero y tabaco. Una experiencia olfativa masculina y poderosa para ocasiones especiales.",
+    "long_description": "Una reinterpretación audaz que combina la intensidad del cuero con notas especiadas y amaderadas. Perfecta para el hombre que busca una fragancia con carácter y presencia, ideal para eventos nocturos y ocasiones especiales.",
+    "price": 119900,
+    "sale_price": null,
+    "currency": "COP",
+    "category": "hombre",
+    "stock": 100,
+    "weight": 0.15,
+    "images": [
+      "inspirado-cuero-jean-pascal-hero.jpg",
+      "inspirado-cuero-jean-pascal-render.jpg",
+      "inspirado-cuero-jean-pascal-lifestyle.jpg"
+    ],
+    "scent_notes": {
+      "top": ["Pimienta Negra", "Citrinos", "Jengibre"],
+      "heart": ["Cuero", "Tabaco", "Rosa"],
+      "base": ["Oud", "Sándalo", "Ámbar", "Vainilla"]
+    },
+    "tags": ["cuero", "tabaco", "intenso", "masculino", "noche", "oriental"],
+    "meta_title": "Inspirado en Cuero Jean Pascal - Fragancia Intensa | SEVÁN PERFUM",
+    "meta_description": "Fragancia inspirada en Cuero de Jean Pascal. Notas de cuero y tabaco para máxima proyección. Formulación premium artesanal.",
+    "legal_note": "Nota: Fragancia inspirada en Jean Pascal. No somos afiliados ni revendedores oficiales de la marca original.",
+    "is_featured": false,
+    "is_active": true
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "sku": "INSP-004",
+    "title": "Inspirado en BOSS Bottled (Hugo Boss)",
+    "visible_title": "Inspirado en BOSS Bottled (Hugo Boss)",
+    "slug": "inspirado-en-boss-bottled-hugo-boss",
+    "short_description": "Clásico atemporal de elegancia masculina. Fragancia versátil que combina frescura cítrica con calidez amaderada.",
+    "long_description": "Nuestra interpretación de este icónico perfume masculino mantiene su equilibrio perfecto entre frescura y calidez. Una fragancia versátil que funciona tanto para el día como para la noche, perfecta para el hombre elegante y seguro de sí mismo.",
+    "price": 89900,
+    "sale_price": 79900,
+    "currency": "COP",
+    "category": "hombre",
+    "stock": 100,
+    "weight": 0.15,
+    "images": [
+      "inspirado-boss-bottled-hugo-boss-hero.jpg",
+      "inspirado-boss-bottled-hugo-boss-render.jpg",
+      "inspirado-boss-bottled-hugo-boss-lifestyle.jpg"
+    ],
+    "scent_notes": {
+      "top": ["Manzana", "Limón", "Bergamota", "Ciruelas"],
+      "heart": ["Geranio", "Canela", "Mahogany"],
+      "base": ["Sándalo", "Vetiver", "Cedro", "Oliva"]
+    },
+    "tags": ["clasico", "versatil", "elegante", "masculino", "dia", "noche"],
+    "meta_title": "Inspirado en BOSS Bottled Hugo Boss - Clásico Masculino | SEVÁN PERFUM",
+    "meta_description": "Fragancia inspirada en BOSS Bottled de Hugo Boss. Elegancia atemporal con notas frescas y amaderadas. Calidad premium artesanal.",
+    "legal_note": "Nota: Fragancia inspirada en Hugo Boss. No somos afiliados ni revendedores oficiales de la marca original.",
+    "is_featured": true,
+    "is_active": true
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "sku": "INSP-005",
+    "title": "Inspirado en BOSS Bottled Night (Hugo Boss)",
+    "visible_title": "Inspirado en BOSS Bottled Night (Hugo Boss)",
+    "slug": "inspirado-en-boss-bottled-night-hugo-boss",
+    "short_description": "La versión nocturna del clásico BOSS. Más intensa y seductora, perfecta para conquistar la noche con elegancia.",
+    "long_description": "Una reinterpretación más intensa y seductora del clásico BOSS Bottled. Diseñada especialmente para ocasiones nocturnas, combina la elegancia del original con una intensidad adicional que la hace irresistible en la oscuridad.",
+    "price": 95900,
+    "sale_price": null,
+    "currency": "COP",
+    "category": "hombre",
+    "stock": 100,
+    "weight": 0.15,
+    "images": [
+      "inspirado-boss-bottled-night-hugo-boss-hero.jpg",
+      "inspirado-boss-bottled-night-hugo-boss-render.jpg",
+      "inspirado-boss-bottled-night-hugo-boss-lifestyle.jpg"
+    ],
+    "scent_notes": {
+      "top": ["Cardamomo", "Bergamota", "Lavanda"],
+      "heart": ["Jazmín", "Rosa", "Violeta"],
+      "base": ["Sándalo", "Louro Faia", "Ámbar Africano"]
+    },
+    "tags": ["noche", "seductor", "intenso", "masculino", "elegante", "especial"],
+    "meta_title": "Inspirado en BOSS Bottled Night Hugo Boss - Seductor Nocturno | SEVÁN PERFUM",
+    "meta_description": "Fragancia inspirada en BOSS Bottled Night de Hugo Boss. Intensidad seductora para la noche. Formulación artesanal premium.",
+    "legal_note": "Nota: Fragancia inspirada en Hugo Boss. No somos afiliados ni revendedores oficiales de la marca original.",
+    "is_featured": true,
+    "is_active": true
+  }
+]

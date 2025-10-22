@@ -1,0 +1,290 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, 
+  X, 
+  ShoppingBag, 
+  Search, 
+  Bot,
+  Heart,
+  Sparkles
+} from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { useCart } from '@/contexts/CartContext';
+import { useFavorites } from '@/contexts/FavoritesContext';
+import { useAuth } from '@/contexts/AuthContext';
+import CartDrawer from '@/components/cart/CartDrawer';
+import { ProductSearchModal } from '@/components/search/ProductSearchModal';
+import realCMSService, { Announcement } from '@/lib/real-cms-service';
+
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+const navigationLinks: NavLink[] = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Perfumes', href: '/products' },
+  { name: 'Kit Emprendedor', href: '/products?collection=kit-emprendedor' },
+  { name: 'Nosotros', href: '/about' },
+  { name: 'AI Assistant', href: '/ai-assistant' },
+  { name: 'Contacto', href: '/contact' }
+];
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+  const [showAnnouncements, setShowAnnouncements] = useState(true);
+  const [headerVisible, setHeaderVisible] = useState(true); // NUEVO: control de visibilidad
+  
+  const { itemCount } = useCart();
+  const { favorites } = useFavorites();
+  const { user, signOut } = useAuth();
+  const pathname = usePathname();
+
+  const currentAnnouncement = announcements[currentAnnouncementIndex];
+
+  // Cargar anuncios
+  useEffect(() => {
+    const loadAnnouncements = async () => {
+      try {
+        const fetchedAnnouncements = await realCMSService.getActiveAnnouncements();
+        setAnnouncements(fetchedAnnouncements);
+      } catch (error) {
+        console.error('Error loading announcements:', error);
+      }
+    };
+    loadAnnouncements();
+  }, []);
+
+  // Rotar anuncios
+  useEffect(() => {
+    if (announcements.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
+  // Padding del body
+  useEffect(() => {
+    const body = document.body;
+    const announcementHeight = showAnnouncements && announcements.length > 0 ? 40 : 0;
+    const headerHeight = headerVisible ? 96 : 0; // NUEVO: 96px cuando visible, 0 cuando oculto
+    body.style.paddingTop = `${announcementHeight + headerHeight}px`;
+    return () => {
+      body.style.paddingTop = '0';
+    };
+  }, [showAnnouncements, announcements.length, headerVisible]);
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      console.log('Sesión cerrada exitosamente');
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
+  };
+
+  const getAnnouncementIcon = (type: string) => {
+    switch (type) {
+      case 'sale': return '🏷️';
+      case 'new': return '✨';
+      case 'info': return 'ℹ️';
+      case 'gift': return '🎁';
+      case 'vip': return '👑';
+      default: return '📢';
+    }
+  };
+
+  return (
+    <>
+      {/* BARRA DE ANUNCIOS - DORADO ELEGANTE */}
+      {announcements.length > 0 && currentAnnouncement && showAnnouncements && (
+        <div className="fixed top-0 left-0 right-0 z-[70] bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-center h-10 relative">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{getAnnouncementIcon(currentAnnouncement.type)}</span>
+                <p className="text-xs md:text-sm font-semibold text-black">
+                  {currentAnnouncement.title} - {currentAnnouncement.message}
+                </p>
+              </div>
+              
+              <button
+                onClick={() => setShowAnnouncements(false)}
+                className="absolute right-2 p-1 text-black/60 hover:text-black rounded-full hover:bg-black/10 transition-all"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* HEADER PRINCIPAL - NEGRO Y DORADO */}
+      <header 
+        className={`fixed left-0 right-0 z-[60] bg-black shadow-lg ${
+          announcements.length > 0 && showAnnouncements ? 'top-[40px]' : 'top-0'
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            
+            {/* LOGO DORADO */}
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-11 h-11 bg-gradient-to-br from-yellow-500 via-amber-500 to-yellow-600 rounded-lg flex items-center justify-center shadow-lg shadow-amber-500/40 group-hover:shadow-amber-500/60 transition-all">
+                <Sparkles className="w-6 h-6 text-black" />
+              </div>
+              <div>
+                <h1 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">SEVÁN PERFUM</h1>
+                <p className="text-[9px] text-gray-500 tracking-wider">LUXURY FRAGRANCES</p>
+              </div>
+            </Link>
+
+            {/* NAVEGACIÓN COMPACTA */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navigationLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                    pathname === link.href
+                      ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-black'
+                      : 'text-gray-300 hover:text-amber-400'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* ACCIONES SIMPLES */}
+            <div className="flex items-center gap-2">
+              {/* Búsqueda */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-lg hover:bg-white/10 transition-all group"
+              >
+                <Search className="w-4 h-4 text-amber-500" />
+                <span className="text-xs text-gray-400">Buscar...</span>
+              </button>
+
+              {/* Favoritos */}
+              <Link href="/favorites">
+                <button className="relative p-2 text-gray-400 hover:text-amber-500 transition-colors">
+                  <Heart className="w-5 h-5" />
+                  {favorites.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                      {favorites.length}
+                    </span>
+                  )}
+                </button>
+              </Link>
+
+              {/* Carrito */}
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="relative p-2 text-gray-400 hover:text-amber-500 transition-colors"
+              >
+                <ShoppingBag className="w-5 h-5" />
+                {itemCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-amber-500 text-black text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </button>
+
+              {/* Auth */}
+              {!user ? (
+                <Link href="/login">
+                  <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold hover:from-amber-400 hover:to-yellow-400 transition-all text-sm px-5 py-2">
+                    Entrar
+                  </Button>
+                </Link>
+              ) : (
+                <div className="hidden md:flex items-center gap-2">
+                  <span className="text-xs text-gray-400">
+                    {user.email}
+                  </span>
+                  <Button
+                    onClick={handleLogout}
+                    variant="outline"
+                    size="sm"
+                    className="text-gray-400 border-gray-700 hover:bg-white/5 text-xs"
+                  >
+                    Salir
+                  </Button>
+                </div>
+              )}
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden p-2.5 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* MOBILE MENU */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="lg:hidden border-t border-white/10 bg-black"
+            >
+              <div className="container mx-auto px-4 py-3 space-y-2">
+                {navigationLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-2.5 rounded-lg transition-all text-sm ${
+                      pathname === link.href
+                        ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-semibold'
+                        : 'text-gray-300 hover:bg-white/10'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                
+                {user && (
+                  <Button
+                    onClick={() => {
+                      handleLogout();
+                      setIsOpen(false);
+                    }}
+                    variant="outline"
+                    className="w-full text-gray-400 border-gray-700 hover:bg-white/5"
+                  >
+                    Cerrar Sesión
+                  </Button>
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* MODALS */}
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <ProductSearchModal 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
+    </>
+  );
+}

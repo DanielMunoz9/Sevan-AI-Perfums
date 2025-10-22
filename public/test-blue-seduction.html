@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Imagen - Blue Seduction</title>
+    <style>
+        body { background: #000; color: #fff; font-family: Arial; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .image-test { border: 2px solid #d4af37; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Imagen - Blue Seduction For Men</h1>
+        
+        <div class="image-test">
+            <h2>Imagen desde ruta relativa:</h2>
+            <img src="/images/products/blue-seduction-for-men-antonio-banderas.jpg" 
+                 alt="Blue Seduction For Men"
+                 onerror="this.nextElementSibling.style.display='block'; this.style.display='none';">
+            <div class="error" style="display:none;">❌ Error: No se pudo cargar la imagen</div>
+        </div>
+        
+        <div class="image-test">
+            <h2>Información del producto:</h2>
+            <p><strong>Título:</strong> Inspirado en Blue Seduction For Men (Antonio Banderas)</p>
+            <p><strong>URL imagen:</strong> /images/products/blue-seduction-for-men-antonio-banderas.jpg</p>
+            <p><strong>Precio:</strong> $82.557</p>
+            <p><strong>Archivo existe:</strong> ✅ SÍ</p>
+        </div>
+        
+        <div class="image-test">
+            <h2>Enlaces útiles:</h2>
+            <p><a href="http://localhost:3000/test-imagenes" style="color: #d4af37;">🧪 Página de test completa</a></p>
+            <p><a href="http://localhost:3000/products" style="color: #d4af37;">📋 Página de productos</a></p>
+            <p><a href="http://localhost:3000/product/inspirado-en-blue-seduction-for-men-antonio-banderas-" style="color: #d4af37;">📦 Página del producto</a></p>
+        </div>
+    </div>
+</body>
+</html>

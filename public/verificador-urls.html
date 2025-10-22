@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de URLs de Perfumes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .url-test {
+      background: #222;
+      border: 1px solid #444;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .url-test h3 {
+      margin: 0 0 10px 0;
+      color: #ffd700;
+      font-size: 14px;
+    }
+    .url-test a {
+      display: block;
+      color: #0099ff;
+      text-decoration: none;
+      font-size: 12px;
+      margin: 5px 0;
+      word-break: break-all;
+      padding: 5px;
+      background: #1a1a1a;
+      border-radius: 4px;
+    }
+    .url-test a:hover {
+      background: #333;
+    }
+    .image-preview {
+      width: 100%;
+      height: 200px;
+      background: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 12px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .image-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .status {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .status.ok {
+      background: #00aa00;
+      color: #fff;
+    }
+    .status.error {
+      background: #aa0000;
+      color: #fff;
+    }
+    .status.loading {
+      background: #aa7700;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Verificador de URLs de Perfumes</h1>
+  <div class="container" id="container"></div>
+
+  <script>
+    const urls = [
+      { 
+        name: '212 Wild Party (Mujer) - URL 1', 
+        url: 'https://lemowoda.clubcore.com.co/Views/Front/img/webp/products/233-1646317084-1646317084.webp' 
+      },
+      { 
+        name: '212 Wild Party (Mujer) - URL 2', 
+        url: 'https://www.fraganza.com.co/cdn/shop/files/212WP27W_grande_1024x1024_2x_4ac8db5a-162b-4d44-a3a8-3e313a9323bd_1024x1024@2x.jpg?v=1747962090' 
+      },
+      { 
+        name: '212 VIP Wins (Mujer) - URL 1', 
+        url: 'https://farina.com.bo/wp-content/uploads/2021/12/carolina-herrera-212-vip-wins-ad.jpg' 
+      },
+      { 
+        name: '212 VIP Wins (Mujer) - URL 2', 
+        url: 'https://www.fraganza.com.co/cdn/shop/files/carolina-herrera-212-vip-wins-eau-de-parfum-80ml_1024x1024@2x.webp?v=1747962099' 
+      },
+      { 
+        name: '212 NYC (Mujer) - URL 1', 
+        url: 'https://cdn-khglf.nitrocdn.com/CWVvcOztbqQIesFhYcTHdQcMmGhozsWp/assets/images/optimized/rev-eaff09b/i0.wp.com/irisfragancias.com/wp-content/uploads/2021/09/15e2bce6a84d4a9b1a9a01bbc38183ba.212-NYC-carolina-herrera-acordes-1.jpg' 
+      },
+      { 
+        name: '212 NYC (Mujer) - URL 2', 
+        url: 'https://perfumescolombia.com.co/cdn/shop/products/212-nyc-carolina-herrera-11-premium-1920455.png?crop=center&height=720&v=1751884213&width=720' 
+      },
+    ];
+
+    const container = document.getElementById('container');
+
+    urls.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'url-test';
+      div.innerHTML = `
+        <h3>${item.name}</h3>
+        <a href="${item.url}" target="_blank" title="Abrir en nueva ventana">
+          ${item.url.substring(0, 60)}...
+        </a>
+        <div class="image-preview" id="preview-${index}">
+          <span class="status loading">Cargando...</span>
+        </div>
+      `;
+      container.appendChild(div);
+
+      // Intentar cargar la imagen
+      const img = new Image();
+      img.onload = function() {
+        const preview = document.getElementById(`preview-${index}`);
+        preview.innerHTML = '';
+        preview.appendChild(img);
+        const status = document.createElement('span');
+        status.className = 'status ok';
+        status.textContent = '✅ OK';
+        preview.appendChild(status);
+      };
+      img.onerror = function() {
+        const preview = document.getElementById(`preview-${index}`);
+        preview.innerHTML = '';
+        const status = document.createElement('span');
+        status.className = 'status error';
+        status.textContent = '❌ ERROR';
+        preview.appendChild(status);
+      };
+      img.src = item.url;
+    });
+  </script>
+</body>
+</html>

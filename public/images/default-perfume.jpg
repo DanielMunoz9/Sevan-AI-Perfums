@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradSEVANPERFUME1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f39c12;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <pattern id="sparkle" patternUnits="userSpaceOnUse" width="50" height="50">
+      <circle cx="25" cy="25" r="2" fill="#ffffff" opacity="0.3"/>
+      <circle cx="10" cy="10" r="1" fill="#ffffff" opacity="0.5"/>
+      <circle cx="40" cy="15" r="1.5" fill="#ffffff" opacity="0.4"/>
+    </pattern>
+  </defs>
+  
+  <!-- Fondo elegante -->
+  <rect width="800" height="800" fill="url(#gradSEVANPERFUME1)"/>
+  
+  <!-- Efectos de sparkle -->
+  <rect width="800" height="800" fill="url(#sparkle)" opacity="0.6"/>
+  
+  <!-- Botella de perfume principal -->
+  <g transform="translate(400, 400)" filter="url(#glow)">
+    <!-- Cuerpo de la botella -->
+    <rect x="-80" y="-120" width="160" height="200" rx="20" fill="#ffffff" opacity="0.9" stroke="#d4af37" stroke-width="3"/>
+    
+    <!-- Cuello de la botella -->
+    <rect x="-25" y="-140" width="50" height="40" fill="#ffffff" opacity="0.9" stroke="#d4af37" stroke-width="2"/>
+    
+    <!-- Tapa superior -->
+    <ellipse cx="0" cy="-155" rx="35" ry="15" fill="#d4af37" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Atomizador -->
+    <circle cx="0" cy="-155" r="8" fill="#ffffff" opacity="0.8"/>
+    <circle cx="0" cy="-155" r="4" fill="#f39c12"/>
+    
+    <!-- Líquido dentro de la botella -->
+    <rect x="-65" y="-100" width="130" height="160" rx="15" fill="#d4af37" opacity="0.3"/>
+    
+    <!-- Etiqueta del perfume -->
+    <rect x="-60" y="-60" width="120" height="80" rx="5" fill="#ffffff" opacity="0.95" stroke="#f39c12" stroke-width="1"/>
+    
+    <!-- Texto de la marca (simplificado) -->
+    <text x="0" y="-35" text-anchor="middle" font-family="serif" font-size="14" font-weight="bold" fill="#d4af37">
+      SEVAN
+    </text>
+    <text x="0" y="-15" text-anchor="middle" font-family="serif" font-size="12" fill="#f39c12">
+      PERFUME
+    </text>
+    
+    <!-- Detalles decorativos -->
+    <line x1="-50" y1="-45" x2="50" y2="-45" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+    <line x1="-50" y1="0" x2="50" y2="0" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Brillos en la botella -->
+    <ellipse cx="-40" cy="-80" rx="8" ry="20" fill="#ffffff" opacity="0.4"/>
+    <ellipse cx="45" cy="-40" rx="6" ry="15" fill="#ffffff" opacity="0.3"/>
+  </g>
+  
+  <!-- Elementos decorativos en las esquinas -->
+  <g opacity="0.4">
+    <circle cx="100" cy="100" r="30" fill="#ffffff" opacity="0.2"/>
+    <circle cx="700" cy="100" r="25" fill="#ffffff" opacity="0.2"/>
+    <circle cx="100" cy="700" r="35" fill="#ffffff" opacity="0.2"/>
+    <circle cx="700" cy="700" r="20" fill="#ffffff" opacity="0.2"/>
+  </g>
+  
+  <!-- Texto elegante en la parte inferior -->
+  <text x="400" y="750" text-anchor="middle" font-family="serif" font-size="24" font-weight="bold" fill="#ffffff" opacity="0.8">
+    SEVAN PERFUMES
+  </text>
+</svg>
