@@ -382,4 +382,5 @@ Configura backups automáticos en Supabase Dashboard.
 
 **Desarrollado con ❤️ para SEVÁN PERFUM**
 
-*Fragancias inspiradas de alta calidad con tecnología IA*
+*Fragancias inspiradas de alta calidad con tecnología IA*#   F o r c e   d e p l o y m e n t  
+ 
