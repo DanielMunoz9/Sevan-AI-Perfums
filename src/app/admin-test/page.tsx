@@ -1,4 +1,4 @@
-// import RealCMSAdminLimpio from '@/components/admin/RealCMSAdminLimpio';
+import RealCMSAdminLimpio from '@/components/admin/RealCMSAdminLimpio';
 
 export default function AdminTest() {
   return (
@@ -7,7 +7,8 @@ export default function AdminTest() {
         🧪 ADMIN TEST - RUTA DE DIAGNÓSTICO
       </div>
       <div className="p-8 text-center">
-        <p>Admin test page - temporalmente deshabilitado para deploy</p>
+        <p className="mb-6">Admin test page - temporalmente deshabilitado para deploy</p>
+        <RealCMSAdminLimpio />
       </div>
     </div>
   );
